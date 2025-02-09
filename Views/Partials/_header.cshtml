@@ -1,0 +1,72 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage;
+@using Umbraco.Cms.Core.Models;
+@using Umbraco.Cms.Core.Models.Blocks;
+
+@{
+    var navigation = Umbraco.ContentAtRoot().FirstOrDefault().Children().Where(x => x.IsVisible());
+    var root = Model.AncestorsOrSelf().Last();
+    string bgImage = null;
+
+    if (root.HasValue("socialProfileImage"))
+    {
+
+        var image = root.Value<MediaWithCrops>("socialProfileImage");
+        bgImage = image.MediaUrl().ToString();
+    }
+    var socialRepo = root.Value<IEnumerable<BlockListItem>>("socialRepo");
+
+}
+
+
+<header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+        <img src="@bgImage" alt="@root.Value("homeTitle") Profil Resmi" class="img-fluid rounded-circle">
+    </div>
+
+    <a href="@root.Url()" class="logo d-flex align-items-center justify-content-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">@root.Value("homeTitle")</h1>
+    </a>
+
+    <div class="social-links text-center">
+        @foreach(var account in socialRepo){
+
+            var platform = account.Content.Value("socialMediaType").ToString().ToLower();
+            var url = account.Content.Value("socialMediaAccount").ToString().ToLower();
+            <a href="@url" class="@platform"><i class="bi bi-@platform"></i></a>
+        }
+        
+    </div>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+                  <li><a href="@root.Url()" class="active"><i class="@root.Value("naviIcon") navicon"></i>@root.Name</a></li>
+        @foreach(var item in navigation)
+        {
+                  <li><a href="@item.Url()" class=""><i class="@item.Value("naviIcon") navicon"></i>@item.Name</a></li>
+
+        }
+        <li class="dropdown"><a href="#"><i class="bi bi-menu-button navicon"></i> <span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul>
+            <li><a href="#">Dropdown 1</a></li>
+            <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a href="#">Deep Dropdown 1</a></li>
+                <li><a href="#">Deep Dropdown 2</a></li>
+                <li><a href="#">Deep Dropdown 3</a></li>
+                <li><a href="#">Deep Dropdown 4</a></li>
+                <li><a href="#">Deep Dropdown 5</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Dropdown 2</a></li>
+            <li><a href="#">Dropdown 3</a></li>
+            <li><a href="#">Dropdown 4</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+  </header>

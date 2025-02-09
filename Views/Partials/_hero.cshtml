@@ -1,0 +1,28 @@
+﻿@using Umbraco.Cms.Core.Models
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage;
+@{
+    var root = Model.AncestorsOrSelf().Last();
+    var heroTitle = root.Value("heroTitle");
+    var firstHeroTitle = heroTitle.ToString().Split(',').First();
+    string bgImage = null;
+
+    if (root.HasValue("homeBgImage"))
+    {
+
+        var image = root.Value<MediaWithCrops>("homeBgImage");
+        bgImage =  image.MediaUrl().ToString();
+    }
+
+}
+
+
+<section id="hero" class="hero section dark-background">
+
+    <img src="@bgImage" alt="" data-aos="fade-in" class="">
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <h2>@root.Value("homeTitle")</h2>
+        <p><span class="typed" data-typed-items="@heroTitle">@firstHeroTitle</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+    </div>
+
+</section>

@@ -1,0 +1,37 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = null;
+}
+
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  @RenderSection("title", false)
+
+  @await Html.PartialAsync("_head")
+  
+</head>
+<body class="index-page">
+  @await Html.PartialAsync("_header")
+  
+  @RenderBody()
+
+
+  <!-- Footer -->
+  @await Html.PartialAsync("_footer")
+  <!-- End of Footer -->
+    <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+  
+  <!-- Vendor JS Files -->
+  @await Html.PartialAsync("_scripts")
+  </body>
+
+</html>
