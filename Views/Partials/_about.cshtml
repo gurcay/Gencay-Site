@@ -1,0 +1,65 @@
+﻿@using Umbraco.Cms.Core.Models
+@using Umbraco.Cms.Core.Models.Blocks;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage;
+@{
+    var root = Model.AncestorsOrSelf().Last();
+    var about = root.ChildrenOfType("about")
+    .Where(x => x.IsVisible()).FirstOrDefault();
+
+  var aboutRepo = about.Value<IEnumerable<BlockListItem>>("blockList");
+  string aboutPhoto = null;
+  if(about.HasValue("aboutPhoto"))
+  {
+    var image = about.Value<MediaWithCrops>("aboutPhoto");
+    aboutPhoto = image.MediaUrl().ToString();
+  }
+}
+
+ <section id="about" class="about section">
+
+      <!-- Section Title -->
+      <div class="container section-title pb-1" data-aos="fade-up">
+        <h2>@about.Name</h2>
+      </div>
+      <!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-4">
+            <img src="@aboutPhoto" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-8 content">
+            <h2>@about.Value("aboutTitle")</h2>
+            <p class="fst-italic py-3">@about.Value("aboutText")</p>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                @foreach(var (item, index) in aboutRepo.Select((x, i) => (x, i)).Where(x => x.x.Content.Value("bulletTitle") != null && x.i % 2 == 0))
+                {
+                    <li><i class="bi bi-chevron-right"></i> <strong>@item.Content.Value("bulletTitle"):</strong> <span>@item.Content.Value("bulletText")</span></li>
+                }                
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                @foreach(var (item, index) in aboutRepo.Select((x, i) => (x, i)).Where(x => x.x.Content.Value("bulletTitle") != null && x.i % 2 == 1))
+                {
+                    <li><i class="bi bi-chevron-right"></i> <strong>@item.Content.Value("bulletTitle"):</strong> <span>@item.Content.Value("bulletText")</span></li>
+                }                
+                </ul>
+              </div>
+            </div>
+            @foreach(var item in aboutRepo.Where(x=> x.Content.Value("simpleTextArea") != null))
+             {
+            <p class="py-3">
+              @item.Content.Value("simpleTextArea")
+            </p>
+             }
+            
+          </div>
+        </div>
+
+      </div>
+
+    </section>

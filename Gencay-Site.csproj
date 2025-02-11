@@ -7,10 +7,6 @@
     <CompressionEnabled>false</CompressionEnabled> <!-- Disable compression. E.g. for umbraco backoffice files. These files should be precompressed by node and not let dotnet handle it -->
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="umbraco\Data\TEMP\InMemoryAuto\all.generated.cs" />
-    <Compile Include="umbraco\Data\TEMP\InMemoryAuto\models.generated.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="bin\Debug\net9.0\appsettings-schema.json" />
     <Content Include="bin\Debug\net9.0\appsettings-schema.Umbraco.Cms.json" />
     <Content Include="bin\Debug\net9.0\appsettings.Development.json" />
@@ -20,9 +16,6 @@
     <Content Include="bin\Debug\net9.0\Gencay-Site.staticwebassets.endpoints.json" />
     <Content Include="bin\Debug\net9.0\Gencay-Site.staticwebassets.runtime.json" />
     <Content Include="bin\Debug\net9.0\umbraco-package-schema.json" />
-    <Content Include="umbraco\Data\TEMP\DistCache\cab909e9744c4dc314e3c142f056c10815b0931e-lastsynced.txt" />
-    <Content Include="umbraco\Data\TEMP\MediaCache\0\f\9\d\e\4\3\d\0f5b.jpg" />
-    <Content Include="umbraco\Data\TEMP\MediaCache\d\3\4\a\c\c\7\2\7812.jpg" />
     <Content Include="umbraco\Logs\UmbracoTraceLog.5600X.20250209.json" />
     <Content Include="umbraco\Logs\UmbracoTraceLog.5600X.20250210.json" />
   </ItemGroup>
@@ -561,56 +554,6 @@
     <None Include="bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll" />
     <None Include="bin\Debug\net9.0\zh-Hant\Microsoft.Data.SqlClient.resources.dll" />
     <None Include="Gencay-Site.sln" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\DeliveryApiContentIndex\segments.gen" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\DeliveryApiContentIndex\segments_4" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\DeliveryApiContentIndex\write.lock" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\ExternalIndex\segments.gen" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\ExternalIndex\segments_l" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\ExternalIndex\write.lock" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\ExternalIndex\_0.cfe" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\ExternalIndex\_0.cfs" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\ExternalIndex\_0.si" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\ExternalIndex\_1.cfe" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\ExternalIndex\_1.cfs" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\ExternalIndex\_1.si" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\ExternalIndex\_8.cfe" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\ExternalIndex\_8.cfs" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\ExternalIndex\_8.si" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\ExternalIndex\_g.cfe" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\ExternalIndex\_g.cfs" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\ExternalIndex\_g.si" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\ExternalIndex\_i.cfe" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\ExternalIndex\_i.cfs" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\ExternalIndex\_i.si" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\ExternalIndex\_i_1.del" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\InternalIndex\segments.gen" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\InternalIndex\segments_l" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\InternalIndex\write.lock" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\InternalIndex\_0.cfe" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\InternalIndex\_0.cfs" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\InternalIndex\_0.si" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\InternalIndex\_1.cfe" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\InternalIndex\_1.cfs" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\InternalIndex\_1.si" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\InternalIndex\_8.cfe" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\InternalIndex\_8.cfs" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\InternalIndex\_8.si" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\InternalIndex\_g.cfe" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\InternalIndex\_g.cfs" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\InternalIndex\_g.si" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\InternalIndex\_i.cfe" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\InternalIndex\_i.cfs" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\InternalIndex\_i.si" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\InternalIndex\_i_1.del" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\MembersIndex\segments.gen" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\MembersIndex\segments_4" />
-    <None Include="umbraco\Data\TEMP\ExamineIndexes\MembersIndex\write.lock" />
-    <None Include="umbraco\Data\TEMP\InMemoryAuto\all.dll.path" />
-    <None Include="umbraco\Data\TEMP\InMemoryAuto\Compiled\generated.csc7deb146bfecc275d341db8946b0a36554d88ecf.dll" />
-    <None Include="umbraco\Data\TEMP\InMemoryAuto\models.hash" />
-    <None Include="umbraco\Data\TEMP\MainDom_0a543aced34d14c4d8447abfab2d451dfe5865c3.lock" />
-    <None Include="umbraco\Data\TEMP\MediaCache\0\f\9\d\e\4\3\d\0f5b.meta" />
-    <None Include="umbraco\Data\TEMP\MediaCache\d\3\4\a\c\c\7\2\7812.meta" />
     <None Include="umbraco\Data\Umbraco.sqlite.db" />
     <None Include="umbraco\Data\Umbraco.sqlite.db-shm" />
     <None Include="umbraco\Data\Umbraco.sqlite.db-wal" />
@@ -624,11 +567,6 @@
     <!-- Opt-in to app-local ICU to ensure consistent globalization APIs across different platforms -->
     <PackageReference Include="Microsoft.ICU.ICU4C.Runtime" Version="72.1.0.3" />
     <RuntimeHostConfigurationOption Include="System.Globalization.AppLocalIcu" Value="72.1.0.3" Condition="$(RuntimeIdentifier.StartsWith('linux')) or $(RuntimeIdentifier.StartsWith('win')) or ('$(RuntimeIdentifier)' == '' and !$([MSBuild]::IsOSPlatform('osx')))" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="umbraco\Data\TEMP\FileUploads\" />
-    <Folder Include="umbraco\Data\TEMP\TemporaryFile\" />
   </ItemGroup>
 
   <PropertyGroup>
